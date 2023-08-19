@@ -40,7 +40,6 @@ try {
 })
 
 //update or edit data
-
 app.put('/products/:id', async (req,res)=>{
 try {
 const {id}=req.params;
@@ -67,11 +66,7 @@ res.status(200).json(product)
 } catch (error) {
     res.status(404).json({message:err.message})
 }
-
 })
-
-
-
 /* =========> first we connect the application with database,then we run the application <============*/
 // mongoose.set('strictQuery',false);
 mongoose.
