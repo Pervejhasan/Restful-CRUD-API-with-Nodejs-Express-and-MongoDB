@@ -54,6 +54,22 @@ const product= await Product.findByIdAndUpdate(id, req.body)
     res.status(500).json({message:err.message})
 }
 })
+//delete dat
+app.delete('./products/:id', async(req,res)=>{
+try {
+    const {id}=req.params;
+    const product=await Product.findByIdAndDelete(id) 
+if(!product){
+    return res.status(404).json({message:`cannot find any product with id ${id}`})
+}
+res.status(200).json(product)
+
+} catch (error) {
+    res.status(404),json({message:err.message})
+}
+
+})
+
 
 
 /* =========> first we connect the application with database,then we run the application <============*/
