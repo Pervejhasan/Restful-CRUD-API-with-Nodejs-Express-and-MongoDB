@@ -22,9 +22,24 @@ try {
   const products=await Product.find({});
   res.status(200).json(products)
 } catch (err) {
-    res.status(500).json({message:"err.message"})
+    res.status(500).json({message:err.message})
 }
 })
+
+app.get('/products/:id',async (req,res)=>{
+try {
+    // console.log(typeof req.params)
+    const{id}=req.params;
+    const product=await Product.findById(id)
+    res.status(200).json(product)
+  
+} catch (err) {
+    res.status(500).json({message:err.message})
+}
+
+})
+
+
 
 /* =========> first we connect the application with database,then we run the application <============*/
 // mongoose.set('strictQuery',false);
