@@ -54,8 +54,8 @@ const product= await Product.findByIdAndUpdate(id, req.body)
     res.status(500).json({message:err.message})
 }
 })
-//delete dat
-app.delete('./products/:id', async(req,res)=>{
+//delete data
+app.delete('/products/:id', async(req,res)=>{
 try {
     const {id}=req.params;
     const product=await Product.findByIdAndDelete(id) 
