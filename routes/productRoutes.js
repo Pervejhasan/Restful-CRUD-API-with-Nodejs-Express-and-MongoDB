@@ -10,12 +10,13 @@ const {
     deleteProduct}=require('../controllers/productController')
 
    // Create data 
-  router.post('/',createProducts).get('/',  getProducts)
+//   router.post('/',createProducts).get('/',  getProducts);
+router.route('/').post(createProducts).get(getProducts);
    //GET product
   //router.get('/',  getProducts)
    
    //GET single product by id
-  router.get('/:id',getProduct).put('/:id',updateProduct ).delete(':id', deleteProduct);
+  router.route('/:id').get(getProduct).put(updateProduct ).delete(deleteProduct);
    
    //Update or edit data
 //router.put('/:id',updateProduct )
