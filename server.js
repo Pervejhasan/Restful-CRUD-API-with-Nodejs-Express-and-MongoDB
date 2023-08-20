@@ -7,12 +7,12 @@ const port=process.env.PORT ||3000;
 const errorMiddleware=require('./middleware/errorMiddleware')
 // const router=express.Router()
 const productRoute=require('./routes/productRoutes')
-// const FRONTEND=process.env.FRONTEND;
+const FRONTEND=process.env.FRONTEND;
 
 
 const corsOptions = {
-    // origin:FRONTEND,
-    origin:'http://localhost:5173',
+    origin:FRONTEND,
+    // origin:'http://localhost:5173',
    
   }
 app.use(cors(corsOptions))
